@@ -1,0 +1,24 @@
+.form-change {
+    //margin-top: 30px;
+    position: relative;
+    left: 15%;
+    width: 75%;
+    text-align: center;
+    text-align: -webkit-center;
+}
+
+.form-change label {
+    color: white;
+}
+
+.form-change label.first-label {
+    margin-top: 30px;
+}
+
+@media only screen and (min-width: 882px) {
+    .form-change  {
+        position: relative;
+        left: 25%;
+        width: 50%;
+    }
+}

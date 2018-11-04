@@ -1,0 +1,41 @@
+<form class="form-change" #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)" novalidate>
+	<div class="container">
+
+		<!-- <span style="color:white;">{{ userModel | json}}</span> -->
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group text-left">
+					<label for="name" class="first-label">Your Name</label>
+					<input type="text" class="form-control" [(ngModel)]="userModel.name" name="userName" #userName="ngModel" [ngClass]="{'is-invalid': myForm.submitted && userName.invalid}"
+					 id="name" placeholder="Enter your full name" required minlength="3">
+					<small class="invalid-feedback"><b>The min length is of 3 characters.</b></small>
+
+				</div>
+				<div class="form-group text-left">
+					<label for="emailAdd">Email address</label>
+					<input type="email" class="form-control" [(ngModel)]="userModel.email" name="emailAddress" #emailAddress="ngModel"
+					 [ngClass]="{'is-invalid': myForm.submitted && emailAddress.invalid}" id="emailAdd" aria-describedby="emailHelp"
+					 placeholder="Enter email" required minlength="3">
+					<small class="invalid-feedback"><b>Please enter a valid email address.</b></small>
+				</div>
+				<div class="form-group text-left">
+					<label for="topic">Topic</label>
+					<select id="topic" class="form-control" name="topicSelected" [(ngModel)]="userModel.topic" #topic="ngModel"
+					 [ngClass]="{'is-invalid': myForm.submitted && (topic.untouched || topic.invalid)}" required>
+						<option *ngFor="let item of options" [value]="item">{{ item }}</option>
+					</select>
+					<small class="invalid-feedback"><b>Please select a topic.</b></small>
+				</div>
+				<div class="form-group text-left">
+					<label for="message">Your message</label>
+					<textarea name="message" class="form-control" [(ngModel)]="userModel.message" id="message" cols="30" rows="10"
+					 placeholder="Start your message here" #message="ngModel" [ngClass]="{'is-invalid': myForm.submitted && message.invalid}"
+					 required minlength="5"></textarea>
+					<small class="invalid-feedback"><b>Please type your message.</b></small>
+				</div>
+				<button type="submit" class="btn btn-primary">Send</button>
+			</div>
+		</div>
+	</div>
+</form><br />
