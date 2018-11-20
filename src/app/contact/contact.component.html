@@ -7,16 +7,17 @@
 			<div class="col-sm-12">
 				<div class="form-group text-left">
 					<label for="name" class="first-label">Your Name</label>
-					<input type="text" class="form-control" [(ngModel)]="userModel.name" name="userName" #userName="ngModel" [ngClass]="{'is-invalid': myForm.submitted && userName.invalid}"
+					<input type="text" class="form-control" [(ngModel)]="userModel.name" name="userName" #userName="ngModel"
+					 [ngClass]="{'is-invalid': myForm.submitted && userName.invalid}"
 					 id="name" placeholder="Enter your full name" required minlength="3">
 					<small class="invalid-feedback"><b>The min length is of 3 characters.</b></small>
 
 				</div>
 				<div class="form-group text-left">
 					<label for="emailAdd">Email address</label>
-					<input type="email" class="form-control" [(ngModel)]="userModel.email" name="emailAddress" #emailAddress="ngModel"
+					<input type="text" class="form-control" [(ngModel)]="userModel.email" name="emailAddress" #emailAddress="ngModel"
 					 [ngClass]="{'is-invalid': myForm.submitted && emailAddress.invalid}" id="emailAdd" aria-describedby="emailHelp"
-					 placeholder="Enter email" required minlength="3">
+					 placeholder="Enter email" required email minlength="3">
 					<small class="invalid-feedback"><b>Please enter a valid email address.</b></small>
 				</div>
 				<div class="form-group text-left">
@@ -34,7 +35,7 @@
 					 required minlength="5"></textarea>
 					<small class="invalid-feedback"><b>Please type your message.</b></small>
 				</div>
-				<button type="submit" class="btn btn-primary">Send</button>
+				<button type="submit"  class="btn btn-primary">Send</button>
 			</div>
 		</div>
 	</div>

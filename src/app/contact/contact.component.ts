@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserForm } from '../_models/user-form';
 import { FormGroup } from '@angular/forms';
+import swal from 'sweetalert2';
 
 @Component({
     selector: 'app-contact',
@@ -20,7 +21,19 @@ export class ContactComponent implements OnInit {
     ngOnInit() { }
 
     onSubmit(value: any) {
-        console.log(value);
-    }
+        if (value) {
+            swal({
+                title: 'Thank you for contacting us!',
+                text: 'We will review your message and return back to you whenever possible',
+                type: 'success',
+                showConfirmButton: false,
+                timer: 2000
+            });
+            setTimeout(function () {
+                location.reload();
+            }, 2100);
+        }
+    };
+
 
 }
