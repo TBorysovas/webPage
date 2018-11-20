@@ -20,8 +20,10 @@ export class ContactComponent implements OnInit {
 
     ngOnInit() { }
 
-    onSubmit(value: any) {
-        if (value) {
+    onSubmit(result: any) {
+        if (!result.userName || !result.emailAddress || !result.topicSelected || !result.message) {
+            return;
+        } else {
             swal({
                 title: 'Thank you for contacting us!',
                 text: 'We will review your message and return back to you whenever possible',
