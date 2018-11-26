@@ -26,13 +26,13 @@ export class ContactComponent implements OnInit {
         } else {
             swal({
                 title: 'Thank you for contacting us!',
-                text: 'We will review your message and return back to you whenever possible',
+                html: 'We will review your message and<br /> return back to you whenever possible,<br />',
                 type: 'success',
                 showConfirmButton: false,
                 timer: 2000
             });
             setTimeout(function () {
-                location.reload();
+                location.reload(true);
             }, 2100);
         }
     };
